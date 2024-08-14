@@ -152,5 +152,10 @@
             <artifactId>dolphinscheduler-datasource-hana</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dolphinscheduler</groupId>
+            <artifactId>dolphinscheduler-datasource-sybase</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

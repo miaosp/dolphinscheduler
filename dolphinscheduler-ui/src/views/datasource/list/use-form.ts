@@ -357,6 +357,11 @@ export const datasourceType: IDataBaseOptionKeys = {
     label: 'SQLSERVER',
     defaultPort: 1433
   },
+  SYBASE: {
+    value: 'SYBASE',
+    label: 'SYBASE',
+    defaultPort: 5000
+  },
   DB2: {
     value: 'DB2',
     label: 'DB2',
