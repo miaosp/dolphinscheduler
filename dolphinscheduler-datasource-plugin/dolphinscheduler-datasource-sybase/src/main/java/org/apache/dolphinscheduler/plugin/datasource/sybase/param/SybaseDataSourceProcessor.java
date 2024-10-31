@@ -51,15 +51,15 @@ public class SybaseDataSourceProcessor extends AbstractDataSourceProcessor {
     @Override
     public BaseDataSourceParamDTO createDatasourceParamDTO(String connectionJson) {
         SybaseConnectionParam connectionParams = (SybaseConnectionParam) createConnectionParams(connectionJson);
-        String[] hostSeperator = connectionParams.getAddress().split(Constants.DOUBLE_SLASH);
-        String[] hostPortArray = hostSeperator[hostSeperator.length - 1].split(Constants.COMMA);
+        String[] hostSeperator = connectionParams.getAddress().split(Constants.COLON);
+        int length = hostSeperator.length;
 
         SybaseDataSourceParamDTO sybaseDatasourceParamDTO = new SybaseDataSourceParamDTO();
         sybaseDatasourceParamDTO.setDatabase(connectionParams.getDatabase());
         sybaseDatasourceParamDTO.setUserName(connectionParams.getUser());
         sybaseDatasourceParamDTO.setOther(connectionParams.getOther());
-        sybaseDatasourceParamDTO.setPort(Integer.parseInt(hostPortArray[0].split(Constants.COLON)[1]));
-        sybaseDatasourceParamDTO.setHost(hostPortArray[0].split(Constants.COLON)[0]);
+        sybaseDatasourceParamDTO.setPort(Integer.parseInt(hostSeperator[length - 1]));
+        sybaseDatasourceParamDTO.setHost(hostSeperator[length - 2]);
         return sybaseDatasourceParamDTO;
     }
 
