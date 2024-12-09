@@ -40,6 +40,8 @@ public class DataxUtils {
 
     public static final String DATAX_READER_PLUGIN_CLICKHOUSE = "clickhousereader";
 
+    public static final String DATAX_READER_PLUGIN_SYBASE = "sybasereader";
+
     public static final String DATAX_READER_PLUGIN_RDBMS = "rdbmsreader";
 
     public static final String DATAX_WRITER_PLUGIN_MYSQL = "mysqlwriter";
@@ -51,7 +53,10 @@ public class DataxUtils {
     public static final String DATAX_WRITER_PLUGIN_SQLSERVER = "sqlserverwriter";
 
     public static final String DATAX_WRITER_PLUGIN_CLICKHOUSE = "clickhousewriter";
+
     public static final String DATAX_WRITER_PLUGIN_DATABEND = "databendwriter";
+
+    public static final String DATAX_WRITER_PLUGIN_SYBASE = "sybasewriter";
 
     public static final String DATAX_WRITER_PLUGIN_RDBMS = "rdbmswriter";
 
@@ -67,6 +72,8 @@ public class DataxUtils {
                 return DATAX_READER_PLUGIN_SQLSERVER;
             case CLICKHOUSE:
                 return DATAX_READER_PLUGIN_CLICKHOUSE;
+            case SYBASE:
+                return DATAX_READER_PLUGIN_SYBASE;
             case HIVE:
             case PRESTO:
             default:
@@ -88,6 +95,8 @@ public class DataxUtils {
                 return DATAX_WRITER_PLUGIN_CLICKHOUSE;
             case DATABEND:
                 return DATAX_WRITER_PLUGIN_DATABEND;
+            case SYBASE:
+                return DATAX_WRITER_PLUGIN_SYBASE;
             case HIVE:
             case PRESTO:
             default:
